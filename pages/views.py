@@ -8,3 +8,7 @@ def page_list(request):
 def page_detail(request, pk):
     page = get_object_or_404(Page, pk=pk)
     return render(request, 'pages/page_detail.html', {'page': page})
+
+def about(request):
+    return render(request, 'pages/about.html')
+
