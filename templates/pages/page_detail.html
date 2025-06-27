@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>{{ page.title }}</h1>
+<h3>{{ page.subtitle }}</h3>
+<p>{{ page.content|safe }}</p>
+<a href="{% url 'page_list' %}">Volver</a>
+
+{% endblock %}
