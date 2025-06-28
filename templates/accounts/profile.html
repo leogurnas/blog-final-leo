@@ -14,7 +14,7 @@
     <li><strong>Web:</strong> <a href="{{ profile.website }}">{{ profile.website }}</a></li>
     <li><strong>Cumpleaños:</strong> {{ profile.birthdate }}</li>
 </ul>
-<a href="#">Editar perfil (pendiente)</a>
+<a href="{% url 'edit_profile' %}">Editar perfil</a>
 {% endblock %}
 
 <a href="{% url 'edit_profile' %}">Editar perfil</a>
