@@ -14,9 +14,13 @@
             <li><a href="/pages/">Publicaciones</a></li>
             <li><a href="/about/">Acerca de mí</a></li>
             {% if user.is_authenticated %}
-            <li><a href="/profile/">Mi perfil</a></li>
+                <li><a href="/profile/">Mi perfil</a></li>
                 <li><a href="/admin/">Admin</a></li>
                 <li><a href="/logout/">Cerrar sesión</a></li>
+                <li><a href="/messages/inbox/">Inbox</a></li>
+                <li><a href="/messages/sent/">Enviados</a></li>
+                <li><a href="/messages/send/">Enviar mensaje</a></li>
+
             {% else %}
                 <li><a href="/login/">Iniciar sesión</a></li>
                 <li><a href="/signup/">Registrarse</a></li>
