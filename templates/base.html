@@ -16,7 +16,15 @@
             {% if user.is_authenticated %}
                 <li><a href="/profile/">Mi perfil</a></li>
                 <li><a href="/admin/">Admin</a></li>
-                <li><a href="/logout/">Cerrar sesión</a></li>
+                <li>
+    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" style="all: unset; cursor: pointer; color: blue; text-decoration: underline;">
+            Cerrar sesión
+        </button>
+    </form>
+</li>
+
                 <li><a href="/messages/inbox/">Inbox</a></li>
                 <li><a href="/messages/sent/">Enviados</a></li>
                 <li><a href="/messages/send/">Enviar mensaje</a></li>
