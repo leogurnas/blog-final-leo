@@ -1,69 +1,35 @@
-Proyecto Blog Django — Playground Final Project
-Descripción
-Este proyecto es una aplicación web tipo blog desarrollada en Python con el framework Django. Cuenta con funcionalidades completas de administración, perfiles de usuario, registro y autenticación, páginas de contenido y mensajería entre usuarios.
+ Blog Final - Proyecto Django
 
-El objetivo es cumplir con los requerimientos funcionales indicados en el enunciado, implementando buenas prácticas como uso de vistas basadas en clases, mixins, herencia de templates y manejo de formularios con imágenes.
+Este es mi proyecto final del curso de Django: una aplicación tipo blog donde los usuarios pueden registrarse, crear y editar páginas, y mantener un perfil con avatar y biografía.
 
-Funcionalidades principales
-Home: Vista principal con bienvenida y navegación.
+ Funcionalidades
 
-About: Página “Acerca de mí” con información estática sobre el dueño de la página en la ruta /about/.
+- Registro, inicio y cierre de sesión de usuarios
+- Vista protegida de perfil con edición de avatar, bio, web y cumpleaños
+- Creación, edición y eliminación de páginas (solo para usuarios logueados)
+- Herencia de templates con `base.html`
+- Navegación con Navbar
+- Página "Acerca de mí"
+- Soporte para subida de imágenes
+- Formulario de cambio de contraseña
+- Protecciones con `@login_required` y `LoginRequiredMixin`
 
-Pages: Listado de páginas (o posts) del blog en /pages/ con mensaje "No hay páginas aún" cuando está vacío.
+🔧 Instalación local
 
-Detalle de página: Vista detalle con toda la información de la página, accediendo desde /pages/<id>/.
+### 1. Clonar el repositorio
 
-CRUD completo de páginas: Crear, actualizar y borrar páginas solo para usuarios autenticados.
+```bash
+git clone https://github.com/leogurnas/blog-final-leo.git
+cd blog-final-leo
 
-Autenticación: Registro, login, logout.
 
-Perfil: Vista y edición de datos del usuario, incluyendo avatar, biografía y cambio de contraseña.
+Crear entorno virtual:
+python -m venv env
+Instalar dependencias:
+pip install -r requirements.txt
+Migraciones y superusuario:
+python manage.py migrate
+python manage.py createsuperuser
+Ejecutar el servidor:
+python manage.py runserver
 
-Mensajería: Sistema para que los usuarios puedan enviarse mensajes privados.
-
-Admin: Registro completo de modelos en el panel administrador de Django.
-
-Formularios con imágenes: Manejo correcto de subida y despliegue de imágenes.
-
-Manejo de sesiones y permisos: Uso de decoradores y mixins para controlar acceso.
-
-Herencia de templates: Plantilla base con barra de navegación para facilitar la navegación.
-
-Modelo principal
-El modelo principal Page (o Post, según preferencia) contiene al menos:
-
-Título (CharField)
-
-Subtítulo o categoría (CharField)
-
-Contenido enriquecido con CKEditor (RichTextField)
-
-Imagen destacada (ImageField)
-
-Fecha de creación/publicación (DateField)
-
-Estructura del proyecto
-accounts/: App para manejo de usuarios (registro, login, perfil).
-
-pages/: App principal con modelo Page y CRUD.
-
-messenger/: App para mensajería interna entre usuarios.
-
-templates/: Plantillas HTML con herencia y fragmentos reutilizables.
-
-static/: Archivos estáticos como CSS, JS, imágenes del proyecto.
-
-media/: Carpeta para almacenar imágenes subidas por usuarios (excluida del repo).
-
-Tecnologías usadas
-Python 3.x
-
-Django 4.x
-
-Django CKEditor para contenido enriquecido
-
-Bootstrap 5 (opcional para estilos y responsive)
-
-SQLite para desarrollo (db.sqlite3 ignorada en Git)
-
-Git para control de versiones
